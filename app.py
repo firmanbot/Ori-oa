@@ -58,7 +58,7 @@ def handle_message(event):
     elif "Apakah " in event.message.text:
         quo = ('Iya','Tidak','Gak tau')
         jwb = random.choice(quo)
-        text_message = TextSendMessage(text=jwbn)
+        text_message = TextSendMessage(text=jwb)
         line_bot_api.reply_message(event.reply_token, text_message)
         return 0
     elif "Idl " in event.message.text:
@@ -111,31 +111,31 @@ def handle_message(event):
                 URIImagemapAction(
                     link_uri='http://line.me/R/ti/p/~hinz85',
                     area=ImagemapArea(
-                        x=0, y=1040, width=260, height=260
+                        x=0, y=780, width=260, height=260
                     )
                 ),
                 URIImagemapAction(
                     link_uri='http://line.me/R/ti/p/~jeremiviki18',
                     area=ImagemapArea(
-                        x=260, y=1040, width=260, height=260
+                        x=260, y=780, width=260, height=260
                     )
                 ),
                 URIImagemapAction(
                     link_uri='http://line.me/R/ti/p/~ultraleonard',
                     area=ImagemapArea(
-                        x=520, y=1040, width=260, height=260
+                        x=520, y=780, width=260, height=260
                     )
                 ),
                 URIImagemapAction(
                     link_uri='http://line.me/R/ti/p/~denz_1717',
                     area=ImagemapArea(
-                        x=260, y=780, width=260, height=260
+                        x=260, y=520, width=260, height=260
                     )
                 ),
                 URIImagemapAction(
                     link_uri='http://line.me/R/ti/p/~zavielpratama',
                     area=ImagemapArea(
-                        x=520, y=780, width=260, height=260
+                        x=520, y=520, width=260, height=260
                     )
                 )
             ]
@@ -145,7 +145,7 @@ def handle_message(event):
     if event.message.text == "Guild ori":
         imagemap_message = ImagemapSendMessage(
             base_url='https://imgur.com/8lIaC0N.jpg',
-            alt_text='Rangers Update September 2017',
+            alt_text='Guild ØRI',
             base_size=BaseSize(height=1040, width=1040),
             actions=[
                 MessageImagemapAction(
