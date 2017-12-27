@@ -67,10 +67,6 @@ def handle_message(event):
         text_message = TextSendMessage(text=sasa)
         line_bot_api.reply_message(event.reply_token, text_message)
         return 0
-    if event.message.text == "Advent Stage":
-        text_message = TextSendMessage(text='Coming soon')
-        line_bot_api.reply_message(event.reply_token, text_message)
-        return 0
     if event.message.text == "R":
         text_message = TextSendMessage(text='Viewlastseen')
         line_bot_api.reply_message(event.reply_token, text_message)
@@ -79,237 +75,77 @@ def handle_message(event):
         text_message = TextSendMessage(text='Setlastpoint')
         line_bot_api.reply_message(event.reply_token, text_message)
         return 0
-    if event.message.text == "Dtbs Rangers":
-        text_message = TextSendMessage(text='Coming soon')
-        line_bot_api.reply_message(event.reply_token, text_message)
-        return 0
-    if event.message.text == "Screen Recorder":
-        text_message = TextSendMessage(text='Coming soon')
-        line_bot_api.reply_message(event.reply_token, text_message)
-        return 0
-    if event.message.text == "Emulator Android PC":
-        text_message = TextSendMessage(text='Coming soon')
-        line_bot_api.reply_message(event.reply_token, text_message)
-        return 0
-    if event.message.text == "Keyword":    
-        carousel_template_message = TemplateSendMessage(
-            alt_text='Keyword Grup モの Rangers',
-            template=CarouselTemplate(
-                columns=[
-                    CarouselColumn(
-                        thumbnail_image_url='https://imgur.com/qXBF4Xi.jpg',
-                        title='モの keyword (Page 1)',
-                        text='Keyword seputar grup モの Rangers',
-                        actions=[
-                            MessageTemplateAction(
-                                label='Rules',
-                                text='Rules'
-                            ),
-                            MessageTemplateAction(
-                                label='Pengurus',
-                                text='Pengurus'
-                            ),
-                            MessageTemplateAction(
-                                label='Next Page'
-                                text='Nxt Info'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://imgur.com/czohXnH.jpg',
-                        title='About Line Rangers (Page 1)',
-                        text='Info Line Rangers.',
-                        actions=[
-                            MessageTemplateAction(
-                                label='Dtbs Rangers',
-                                text='Dtbs Rangers'
-                            ),
-                            MessageTemplateAction(
-                                label='Advent Stage',
-                                text='Advent Stage'
-                            ),
-                            MessageTemplateAction(
-                                label='Next Page',
-                                text='Next Rgr'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://imgur.com/vpnKDDJ.jpg',
-                        title='Tool :',
-                        text='Apk yang disarankan bagi anda.',
-                        actions=[
-                            MessageTemplateAction(
-                                label='Apk Clone',
-                                text='App clone'
-                            ),
-                            MessageTemplateAction(
-                                label='Screen Recorder',
-                                text='Screen Recorder'
-                            ),
-                            MessageTemplateAction(
-                                label='Emulator Android PC',
-                                text='Emulator Android PC'
-                            )
-                        ]
-                    )
-                ]
-            )
-        )
-        line_bot_api.reply_message(event.reply_token, carousel_template_message)
-        return 0
-    if event.message.text == "Gears":
+    if event.message.text == "Keyword":
         buttons_template = TemplateSendMessage(
-            alt_text='Gears Info',
+            alt_text='ØRI Keyword',
             template=ButtonsTemplate(
-                title='Gears Info',
+                title='ØRI Keyword',
                 text='Klik salah satu menu dibawah ini.',
-                thumbnail_image_url='https://imgur.com/k54UZcw.jpg',
+                thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
                 actions=[
-                    URITemplateAction(
-                        label='Gear Free/PVP/RAID',
-                        uri='http://eo.moherbil.com/index.php?p=gears_free'
-                    ),
-                    URITemplateAction(
-                        label='Gear ATK Range',
-                        uri='http://eo.moherbil.com/index.php?p=gears_atkrange'
-                    ),
-                    URITemplateAction(
-                        label='Gear Spam',
-                        uri='http://eo.moherbil.com/index.php?p=gears_spam'
-                    ),
-                    URITemplateAction(
-                        label='Gear Megaman',
-                        uri='http://eo.moherbil.com/index.php?p=gears_ro'
-                    )
-                ]
-            )
-        )
-        line_bot_api.reply_message(event.reply_token, buttons_template)
-        return 0
-    if event.message.text == "Nxt info":
-        buttons_template = TemplateSendMessage(
-            alt_text='',
-            template=ButtonsTemplate(
-                title='モの keyword (Page 2)',
-                text='Klik salah satu menu dibawah ini.',
-                thumbnail_image_url='https://imgur.com/qXBF4Xi.jpg',
-                actions=[
-                    URITemplateAction(
-                        label='Data Member',
-                        uri='https://docs.google.com/spreadsheets/d/1ocqbpQHl65WbpSGHRxpYyciwa0S8UrOqMrKr3zw1FX4'
+                    MessageTemplateAction(
+                        label='Guild',
+                        text='Guild ori'
                     ),
                     MessageTemplateAction(
-                        label='Guild Eo',
-                        text='Guild eo'
+                        label='Pengurus',
+                        text='Pengurus ori'
                     )
                 ]
             )
         )
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
-    if event.message.text == "Next Rgr":
-        buttons_template = TemplateSendMessage(
-            alt_text='About Rangers',
-            template=ButtonsTemplate(
-                title='About Line Rangers (Page 2)',
-                text='Keyword ini akan menampilkan seputar Line Rangers.',
-                thumbnail_image_url='https://imgur.com/czohXnH.jpg',
-                actions=[
-                    URITemplateAction(
-                        label='Farm Leonard Point',
-                        uri='https://docs.google.com/spreadsheets/d/1ocqbpQHl65WbpSGHRxpYyciwa0S8UrOqMrKr3zw1FX4'
-                    ),
-                    MessageTemplateAction(
-                        label='Gears',
-                        text='Gears'
-                    )
-                ]
-            )
-        )
-        line_bot_api.reply_message(event.reply_token, buttons_template)
-        return 0
-    if event.message.text == "App clone":
-        buttons_template = TemplateSendMessage(
-            alt_text='App clone',
-            template=ButtonsTemplate(
-                title='Aplikasi clone',
-                text='Klik salah satu menu dibawah ini.',
-                thumbnail_image_url='https://imgur.com/Hbv4GWl.jpg',
-                actions=[
-                    URITemplateAction(
-                        label='Parallel Space',
-                        uri='https://play.google.com/store/apps/details?id=com.lbe.parallel.intl'
-                    ),
-                    URITemplateAction(
-                        label='APP Cloner',
-                        uri='https://play.google.com/store/apps/details?id=com.applisto.appcloner'
-                    ),
-                    URITemplateAction(
-                        label='2Accounts',
-                        uri='https://play.google.com/store/apps/details?id=com.excelliance.multiaccount'
-                    ),
-                    URITemplateAction(
-                        label='Multi clone',
-                        uri='https://play.google.com/store/apps/details?id=com.jumobile.multiapp'
-                    )
-                ]
-            )
-        )
-        line_bot_api.reply_message(event.reply_token, buttons_template)
-        return 0
-    if event.message.text == "Rules":
+    if event.message.text == "Pengurus ori":
         imagemap_message = ImagemapSendMessage(
-            base_url='https://imgur.com/uJFKjcs.jpg',
-            alt_text='Rules Grup Evolved Rangers',
+            base_url='https://imgur.com/6rXwN9P.jpg',
+            alt_text='Pengurus ØRI',
             base_size=BaseSize(height=1040, width=1040),
             actions=[
-                MessageImagemapAction(
-                    text='Dibaca ya bukan di klik gambarnya',
+                URIImagemapAction(
+                    link_uri='http://line.me/R/ti/p/~ardianwrz',
                     area=ImagemapArea(
-                        x=1, y=0, width=10, height=10
+                        x=1040, y=1040, width=260, height=260
+                    )
+                ),
+                URIImagemapAction(
+                    link_uri='http://line.me/R/ti/p/~hinz85',
+                    area=ImagemapArea(
+                        x=0, y=1040, width=260, height=260
+                    )
+                ),
+                URIImagemapAction(
+                    link_uri='http://line.me/R/ti/p/~jeremiviki18',
+                    area=ImagemapArea(
+                        x=260, y=1040, width=260, height=260
+                    )
+                ),
+                URIImagemapAction(
+                    link_uri='http://line.me/R/ti/p/~ultraleonard',
+                    area=ImagemapArea(
+                        x=520, y=1040, width=260, height=260
+                    )
+                ),
+                URIImagemapAction(
+                    link_uri='http://line.me/R/ti/p/~denz_1717',
+                    area=ImagemapArea(
+                        x=260, y=780, width=260, height=260
+                    )
+                ),
+                URIImagemapAction(
+                    link_uri='http://line.me/R/ti/p/~zavielpratama',
+                    area=ImagemapArea(
+                        x=520, y=780, width=260, height=260
                     )
                 )
             ]
         )
         line_bot_api.reply_message(event.reply_token, imagemap_message)
         return 0
-    if event.message.text == "Sep 17":
+    if event.message.text == "Guild ori":
         imagemap_message = ImagemapSendMessage(
-            base_url='https://imgur.com/nsdrTRo.jpg',
+            base_url='https://imgur.com/8lIaC0N.jpg',
             alt_text='Rangers Update September 2017',
-            base_size=BaseSize(height=1040, width=1040),
-            actions=[
-                MessageImagemapAction(
-                    text='Dibaca ya bukan di klik gambarnya',
-                    area=ImagemapArea(
-                        x=1, y=0, width=10, height=10
-                    )
-                )
-            ]
-        )
-        line_bot_api.reply_message(event.reply_token, imagemap_message)
-        return 0
-    if event.message.text == "Sep 16":
-        imagemap_message = ImagemapSendMessage(
-            base_url='https://imgur.com/tnfYdLa.jpg',
-            alt_text='Rangers Update September 2016',
-            base_size=BaseSize(height=1040, width=1040),
-            actions=[
-                MessageImagemapAction(
-                    text='Dibaca ya bukan di klik gambarnya',
-                    area=ImagemapArea(
-                        x=1, y=0, width=10, height=10
-                    )
-                )
-            ]
-        )
-        line_bot_api.reply_message(event.reply_token, imagemap_message)
-        return 0
-    if event.message.text == "Pengurus":
-        imagemap_message = ImagemapSendMessage(
-            base_url='https://imgur.com/4Kn4DKS.jpg',
-            alt_text='Pengurus Grup Evolved Rangers',
             base_size=BaseSize(height=1040, width=1040),
             actions=[
                 MessageImagemapAction(
