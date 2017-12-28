@@ -97,9 +97,13 @@ def handle_message(event):
             alt_text='Isi data diri',
             template=ButtonsTemplate(
                 title='Data member ØRI',
-                text='Silahkan mengisi form data member dengan klik menu dibawah ini',
+                text='isi form data member dengan klik menu dibawah ini',
                 thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
                 actions=[
+                    MessageTemplateAction(
+                        label='Dapatkan form',
+                        text='Minta form dong min...'
+                    ),
                     MessageTemplateAction(
                         label='Dapatkan form',
                         text='Minta form dong min...'
