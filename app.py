@@ -92,25 +92,17 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
-    if event.message.text == "正妹":
+    if event.message.text == "Welcome":
         buttons_template = TemplateSendMessage(
-            alt_text='正妹 template',
+            alt_text='Isi data diri',
             template=ButtonsTemplate(
-                title='選擇服務',
-                text='請選擇',
-                thumbnail_image_url='https://i.imgur.com/qKkE2bj.jpg',
+                title='Data member ØRI',
+                text='Silahkan mengisi form data member dengan klik menu dibawah ini',
+                thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
                 actions=[
                     MessageTemplateAction(
-                        label='PTT 表特版 近期大於 10 推的文章',
-                        text='PTT 表特版 近期大於 10 推的文章'
-                    ),
-                    MessageTemplateAction(
-                        label='來張 imgur 正妹圖片',
-                        text='來張 imgur 正妹圖片'
-                    ),
-                    MessageTemplateAction(
-                        label='隨便來張正妹圖片',
-                        text='隨便來張正妹圖片'
+                        label='Dapatkan form',
+                        text='Minta form dong min...'
                     )
                 ]
             )
