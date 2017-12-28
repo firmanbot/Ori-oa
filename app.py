@@ -71,7 +71,7 @@ def handle_message(event):
         buttons_template = TemplateSendMessage(
             alt_text='ØRI Keyword',
             template=ButtonsTemplate(
-                title='ØRI Keyword',
+                title='lewat dari wkt yg di tentukan akan di kick',
                 text='Klik salah satu menu dibawah ini.',
                 thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
                 actions=[
@@ -96,17 +96,17 @@ def handle_message(event):
         buttons_template = TemplateSendMessage(
             alt_text='Isi data diri',
             template=ButtonsTemplate(
-                title='Data member ØRI',
-                text='isi form data member dengan klik menu dibawah ini',
+                title='isi data dinote grup.diberi wkt 1x24 jam',
+                text='lewat dari wkt yg di tentukan akan di kick',
                 thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
                 actions=[
                     MessageTemplateAction(
                         label='Dapatkan form',
                         text='Minta form dong min...'
                     ),
-                    MessageTemplateAction(
-                        label='Dapatkan form',
-                        text='Minta form dong min...'
+                    URITemplateAction(
+                        label='Dibaca Rulesnya!!',
+                        uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1151442807704026737'
                     )
                 ]
             )
