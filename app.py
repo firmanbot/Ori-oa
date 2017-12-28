@@ -62,7 +62,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, text_message)
         return 0
     if event.message.text == "Makanan":
-        quor = ('https://imgur.com/Gl0lcYB.jpg','https://imgur.com/1Sae11M.jpg')
+        quor = ('https://imgur.com/Gl0lcYB.jpg','https://imgur.com/1Sae11M.jpg','https://imgur.com/ZuChLoV.jpg','https://imgur.com/miHQFHT.jpg','https://imgur.com/lhR1aW3.jpg')
         jwbr = random.choice(quor)
         image_message = ImageSendMessage(
             original_content_url=jwbr,
