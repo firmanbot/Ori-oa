@@ -82,6 +82,10 @@ def handle_message(event):
                     URITemplateAction(
                         label='Pengurus',
                         uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1151442178104024988'
+                    ),
+                    URITemplateAction(
+                        label='Rules',
+                        uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1151442807704026737'
                     )
                 ]
             )
