@@ -67,14 +67,6 @@ def handle_message(event):
         text_message = TextSendMessage(text=sasa)
         line_bot_api.reply_message(event.reply_token, text_message)
         return 0
-    if event.message.text == "R":
-        text_message = TextSendMessage(text='Viewlastseen')
-        line_bot_api.reply_message(event.reply_token, text_message)
-        return 0
-    if event.message.text == "Rs":
-        text_message = TextSendMessage(text='Setlastpoint')
-        line_bot_api.reply_message(event.reply_token, text_message)
-        return 0
     if event.message.text == "Keyword":
         buttons_template = TemplateSendMessage(
             alt_text='ØRI Keyword',
@@ -83,80 +75,18 @@ def handle_message(event):
                 text='Klik salah satu menu dibawah ini.',
                 thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
                 actions=[
-                    MessageTemplateAction(
+                    URITemplateAction(
                         label='Guild',
-                        text='Guild ori'
+                        uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1151441933104021159'
                     ),
-                    MessageTemplateAction(
+                    URITemplateAction(
                         label='Pengurus',
-                        text='Pengurus ori'
+                        uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1151442178104024988'
                     )
                 ]
             )
         )
         line_bot_api.reply_message(event.reply_token, buttons_template)
-        return 0
-    if event.message.text == "Pengurus ori":
-        imagemap_message = ImagemapSendMessage(
-            base_url='https://imgur.com/6rXwN9P.jpg',
-            alt_text='Pengurus ØRI',
-            base_size=BaseSize(height=1040, width=1040),
-            actions=[
-                URIImagemapAction(
-                    link_uri='http://line.me/R/ti/p/~ardianwrz',
-                    area=ImagemapArea(
-                        x=1040, y=1040, width=260, height=260
-                    )
-                ),
-                URIImagemapAction(
-                    link_uri='http://line.me/R/ti/p/~hinz85',
-                    area=ImagemapArea(
-                        x=0, y=780, width=260, height=260
-                    )
-                ),
-                URIImagemapAction(
-                    link_uri='http://line.me/R/ti/p/~jeremiviki18',
-                    area=ImagemapArea(
-                        x=260, y=780, width=260, height=260
-                    )
-                ),
-                URIImagemapAction(
-                    link_uri='http://line.me/R/ti/p/~ultraleonard',
-                    area=ImagemapArea(
-                        x=520, y=780, width=260, height=260
-                    )
-                ),
-                URIImagemapAction(
-                    link_uri='http://line.me/R/ti/p/~denz_1717',
-                    area=ImagemapArea(
-                        x=260, y=520, width=260, height=260
-                    )
-                ),
-                URIImagemapAction(
-                    link_uri='http://line.me/R/ti/p/~zavielpratama',
-                    area=ImagemapArea(
-                        x=520, y=520, width=260, height=260
-                    )
-                )
-            ]
-        )
-        line_bot_api.reply_message(event.reply_token, imagemap_message)
-        return 0
-    if event.message.text == "Guild ori":
-        imagemap_message = ImagemapSendMessage(
-            base_url='https://imgur.com/8lIaC0N.jpg',
-            alt_text='Guild ØRI',
-            base_size=BaseSize(height=1040, width=1040),
-            actions=[
-                MessageImagemapAction(
-                    text='Dibaca ya bukan di klik gambarnya',
-                    area=ImagemapArea(
-                        x=1, y=0, width=10, height=10
-                    )
-                )
-            ]
-        )
-        line_bot_api.reply_message(event.reply_token, imagemap_message)
         return 0
     if event.message.text == "正妹":
         buttons_template = TemplateSendMessage(
