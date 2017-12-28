@@ -71,7 +71,7 @@ def handle_message(event):
         buttons_template = TemplateSendMessage(
             alt_text='ØRI Keyword',
             template=ButtonsTemplate(
-                title='lewat dari wkt yg di tentukan akan di kick',
+                title='ØRI Keyword',
                 text='Klik salah satu menu dibawah ini.',
                 thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
                 actions=[
@@ -85,6 +85,27 @@ def handle_message(event):
                     ),
                     URITemplateAction(
                         label='Rules',
+                        uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1151442807704026737'
+                    )
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token, buttons_template)
+        return 0
+    if event.message.text == "Rules":
+        buttons_template = TemplateSendMessage(
+            alt_text='Rules ØRI',
+            template=ButtonsTemplate(
+                title='Rules ØRI',
+                text='Dalam versi apa?.',
+                thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
+                actions=[
+                    MessageTemplateAction(
+                        label='Versi satuan',
+                        text='Rules satuan'
+                    ),
+                    URITemplateAction(
+                        label='Versi full',
                         uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1151442807704026737'
                     )
                 ]
