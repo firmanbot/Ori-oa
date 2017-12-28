@@ -61,6 +61,16 @@ def handle_message(event):
         text_message = TextSendMessage(text=jwb)
         line_bot_api.reply_message(event.reply_token, text_message)
         return 0
+    elif "/LR" in event.message.text:
+        text_message = TextSendMessage(text='Gak ada po disini\nLewat personal chat aja ya...\nNih kontaknya\nhttp://line.me/R/ti/p/~@qik6373h\nhttp://line.me/R/ti/p/~@qik6373h')
+        line_bot_api.reply_message(event.reply_token, text_message)
+        return 0
+    elif "Kapan " in event.message.text:
+        quo = ('Hari ini','Besok','Lusa','Minggu depan','Sebulan lagi','Setahun lagi','Tanya langsung ke orangnya...')
+        jwb = random.choice(quo)
+        text_message = TextSendMessage(text=jwb)
+        line_bot_api.reply_message(event.reply_token, text_message)
+        return 0
     elif "Idl " in event.message.text:
         skss = event.message.text.replace('Idl ', '')
         sasa = "http://line.me/R/ti/p/~" + skss
@@ -75,17 +85,17 @@ def handle_message(event):
                 text='Klik salah satu menu dibawah ini.',
                 thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
                 actions=[
-                    URITemplateAction(
-                        label='Guild',
-                        uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1151441933104021159'
-                    ),
-                    URITemplateAction(
+                    MessageTemplateAction(
                         label='Pengurus',
-                        uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1151442178104024988'
+                        text='Pengurus'
                     ),
-                    URITemplateAction(
+                    MessageTemplateAction(
+                        label='Guild',
+                        text='Guild'
+                    ),
+                    MessageTemplateAction(
                         label='Rules',
-                        uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1151442807704026737'
+                        text='Rules'
                     )
                 ]
             )
@@ -97,7 +107,7 @@ def handle_message(event):
             alt_text='Rules ØRI',
             template=ButtonsTemplate(
                 title='Rules ØRI',
-                text='Dalam versi apa?.',
+                text='Dalam versi apa?',
                 thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
                 actions=[
                     MessageTemplateAction(
@@ -107,6 +117,40 @@ def handle_message(event):
                     URITemplateAction(
                         label='Versi full',
                         uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1151442807704026737'
+                    )
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token, buttons_template)
+        return 0
+    if event.message.text == "Pengurus":
+        buttons_template = TemplateSendMessage(
+            alt_text='Pengurus ØRI',
+            template=ButtonsTemplate(
+                title='Pengurus ØRI',
+                text='Pengen tau? klik menu dibawah ini',
+                thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
+                actions=[
+                    URITemplateAction(
+                        label='Info',
+                        uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1151442178104024988'
+                    )
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token, buttons_template)
+        return 0
+    if event.message.text == "Guild":
+        buttons_template = TemplateSendMessage(
+            alt_text='Guild ØRI',
+            template=ButtonsTemplate(
+                title='Guild ØRI',
+                text='Gak punya guild? join aja...',
+                thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
+                actions=[
+                    URITemplateAction(
+                        label='Info',
+                        uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1151441933104021159'
                     )
                 ]
             )
@@ -126,7 +170,7 @@ def handle_message(event):
                         text='Minta form dong min...'
                     ),
                     URITemplateAction(
-                        label='Dibaca Rulesnya!!',
+                        label='Dibaca juga Rulesnya',
                         uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1151442807704026737'
                     )
                 ]
