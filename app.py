@@ -94,44 +94,25 @@ def handle_message(event):
         return 0
     if event.message.text == "Keyword":    
         carousel_template_message = TemplateSendMessage(
-            alt_text='Keyword ØRI',
+            alt_text='Keyword Grup モの Rangers',
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
+                        thumbnail_image_url='https://imgur.com/qXBF4Xi.jpg',
                         title='ØRI Keyword',
-                        text='Klik salah sau menu dibawah ini',
+                        text='Klik salah satu menu dibawah ini',
                         actions=[
+                            MessageTemplateAction(
+                                label='Rules',
+                                text='Rules'
+                            ),
                             MessageTemplateAction(
                                 label='Pengurus',
                                 text='Pengurus'
                             ),
-                            MessageTemplateAction(
-                                label='Guild',
-                                text='Guild'
-                            ),
-                            MessageTemplateAction(
-                                label='Rules',
-                                text='Rules'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
-                        title='ØRI Keyword',
-                        text='Klik salah sau menu dibawah ini',
-                        actions=[
-                            MessageTemplateAction(
-                                label='Pengurus',
-                                text='Pengurus'
-                            ),
-                            MessageTemplateAction(
-                                label='Guild',
-                                text='Guild'
-                            ),
-                            MessageTemplateAction(
-                                label='Rules',
-                                text='Rules'
+                            URITemplateAction(
+                                label='Data Member',
+                                uri='https://docs.google.com/spreadsheets/d/1ocqbpQHl65WbpSGHRxpYyciwa0S8UrOqMrKr3zw1FX4'
                             )
                         ]
                     ),
@@ -151,6 +132,25 @@ def handle_message(event):
                             MessageTemplateAction(
                                 label='Foto makanan (Acak)',
                                 text='Makanan'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://imgur.com/vpnKDDJ.jpg',
+                        title='Tool :',
+                        text='Apk yang disarankan bagi anda.',
+                        actions=[
+                            MessageTemplateAction(
+                                label='Apk Clone',
+                                text='App clone'
+                            ),
+                            MessageTemplateAction(
+                                label='Screen Recorder',
+                                text='Screen Recorder'
+                            ),
+                            MessageTemplateAction(
+                                label='Emulator Android PC',
+                                text='Emulator Android PC'
                             )
                         ]
                     )
