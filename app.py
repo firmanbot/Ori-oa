@@ -61,8 +61,14 @@ def handle_message(event):
         text_message = TextSendMessage(text=jwb)
         line_bot_api.reply_message(event.reply_token, text_message)
         return 0
+    elif "Siapakah " in event.message.text:
+        jawan = ('Orang yang suka gosip kak...','Orang yang suka ngalong kak...','dia jones lho, temenin gih...','Orang yang baik dan tidak sombong kak...','Orang yang suka baperan kak...','Dia sultan lho...','Dia yang kemarin nabrak tiang listrik...')
+        dsa = random.choice(jawan)
+        text_message = TextSendMessage(text=dsa)
+        line_bot_api.reply_message(event.reply_token, text_message)
+        return 0
     if event.message.text == "Makanan":
-        quor = ('https://imgur.com/Gl0lcYB.jpg','https://imgur.com/1Sae11M.jpg','https://imgur.com/ZuChLoV.jpg','https://imgur.com/miHQFHT.jpg','https://imgur.com/lhR1aW3.jpg')
+        quor = ('https://imgur.com/Gl0lcYB.jpg','https://imgur.com/1Sae11M.jpg','https://imgur.com/ZuChLoV.jpg','https://imgur.com/miHQFHT.jpg','https://imgur.com/lhR1aW3.jpg','https://imgur.com/qf6gwYQ.jpg','https://imgur.com/3nbHyTw.jpg','https://imgur.com/wq83igW.jpg')
         jwbr = random.choice(quor)
         image_message = ImageSendMessage(
             original_content_url=jwbr,
@@ -70,7 +76,7 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token, image_message)
         return 0
-    elif "/LR" in event.message.text:
+    elif "/lr" in event.message.text:
         text_message = TextSendMessage(text='Gak ada po disini\nLewat personal chat aja ya...\nNih kontaknya\nhttp://line.me/R/ti/p/~@qik6373h\nhttp://line.me/R/ti/p/~@qik6373h')
         line_bot_api.reply_message(event.reply_token, text_message)
         return 0
@@ -86,30 +92,53 @@ def handle_message(event):
         text_message = TextSendMessage(text=sasa)
         line_bot_api.reply_message(event.reply_token, text_message)
         return 0
-    if event.message.text == "Keyword":
-        buttons_template = TemplateSendMessage(
-            alt_text='ØRI Keyword',
-            template=ButtonsTemplate(
-                title='ØRI Keyword',
-                text='Klik salah satu menu dibawah ini.',
-                thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
-                actions=[
-                    MessageTemplateAction(
-                        label='Pengurus',
-                        text='Pengurus'
+    if event.message.text == "Keyword":    
+        carousel_template_message = TemplateSendMessage(
+            alt_text='Keyword ØRI',
+            template=CarouselTemplate(
+                columns=[
+                    CarouselColumn(
+                        thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
+                        title='ØRI Keyword',
+                        text='',
+                        actions=[
+                            MessageTemplateAction(
+                                label='Pengurus',
+                                text='Pengurus'
+                            ),
+                            MessageTemplateAction(
+                                label='Guild',
+                                text='Guild'
+                            ),
+                            MessageTemplateAction(
+                                label='Rules',
+                                text='Rules'
+                            )
+                        ]
                     ),
-                    MessageTemplateAction(
-                        label='Guild',
-                        text='Guild'
-                    ),
-                    MessageTemplateAction(
-                        label='Rules',
-                        text='Rules'
+                    CarouselColumn(
+                        thumbnail_image_url='https://imgur.com/RBDkN79',
+                        title='Hiburan',
+                        text='Klik salah satu menu dibawah ini',
+                        actions=[
+                            MessageTempalateAction(
+                                label='Kerang ajaib',
+                                text='Kerajib'
+                            ),
+                            MessageTemplateAction(
+                                label='Penjwb pertanyaan',
+                                text='Questans'
+                            ),
+                            MessageTemplateAction(
+                                label='Foto makanan (Acak)',
+                                text='Makanan'
+                            )
+                        ]
                     )
                 ]
             )
         )
-        line_bot_api.reply_message(event.reply_token, buttons_template)
+        line_bot_api.reply_message(event.reply_token, carousel_template_message)
         return 0
     if event.message.text == "Rules":
         buttons_template = TemplateSendMessage(
