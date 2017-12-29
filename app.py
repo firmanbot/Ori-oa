@@ -140,22 +140,22 @@ def handle_message(event):
         return 0
     if event.message.text == "Hiburan":
         buttons_template = TemplateSendMessage(
-            alt_text='About ORI',
+            alt_text='Hiburan',
             template=ButtonsTemplate(
-                title='About ORI',
+                title='Hiburan',
                 text='Pilih salah satu menu dibawah ini',
-                thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
+                thumbnail_image_url='https://imgur.com/RBDkN79.jpg',
                 actions=[
-                    MessageTempalateAction(
+                    MessageTemplateAction(
                         label='Kerang ajaib',
                         text='Kerajib'
                     ),
                     MessageTemplateAction(
-                        label='Penjwb pertanyaan',
-                        text='Questans'
+                        label='Penjwb Pertanyaan',
+                        text='Rules satuan'
                     ),
                     MessageTemplateAction(
-                        label='Foto makanan (Acak)',
+                        label='Foto makanan',
                         text='Makanan'
                     )
                 ]
