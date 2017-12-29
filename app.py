@@ -100,7 +100,7 @@ def handle_message(event):
                     CarouselColumn(
                         thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
                         title='ØRI Keyword',
-                        text='',
+                        text='Klik salah sau menu dibawah ini',
                         actions=[
                             MessageTemplateAction(
                                 label='Pengurus',
