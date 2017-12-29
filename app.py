@@ -92,72 +92,76 @@ def handle_message(event):
         text_message = TextSendMessage(text=sasa)
         line_bot_api.reply_message(event.reply_token, text_message)
         return 0
-    if event.message.text == "Keyword":    
-        carousel_template_message = TemplateSendMessage(
-            alt_text='Keyword Grup モの Rangers',
-            template=CarouselTemplate(
-                columns=[
-                    CarouselColumn(
-                        thumbnail_image_url='https://imgur.com/qXBF4Xi.jpg',
-                        title='ØRI Keyword',
-                        text='Klik salah satu menu dibawah ini',
-                        actions=[
-                            MessageTemplateAction(
-                                label='Rules',
-                                text='Rules'
-                            ),
-                            MessageTemplateAction(
-                                label='Pengurus',
-                                text='Pengurus'
-                            ),
-                            URITemplateAction(
-                                label='Data Member',
-                                uri='https://docs.google.com/spreadsheets/d/1ocqbpQHl65WbpSGHRxpYyciwa0S8UrOqMrKr3zw1FX4'
-                            )
-                        ]
+    if event.message.text == "Key":
+        buttons_template = TemplateSendMessage(
+            alt_text='Key ØRI',
+            template=ButtonsTemplate(
+                title='Key ØRI',
+                text='Pilih salah satu menu dibawah ini',
+                thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
+                actions=[
+                    MessageTemplateAction(
+                        label='About ORI',
+                        text='ORI grup'
                     ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://imgur.com/RBDkN79.jpg',
-                        title='Hiburan',
-                        text='Klik salah satu menu dibawah ini',
-                        actions=[
-                            MessageTempalateAction(
-                                label='Kerang ajaib',
-                                text='Kerajib'
-                            ),
-                            MessageTemplateAction(
-                                label='Penjwb pertanyaan',
-                                text='Questans'
-                            ),
-                            MessageTemplateAction(
-                                label='Foto makanan (Acak)',
-                                text='Makanan'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://imgur.com/vpnKDDJ.jpg',
-                        title='Tool :',
-                        text='Apk yang disarankan bagi anda.',
-                        actions=[
-                            MessageTemplateAction(
-                                label='Apk Clone',
-                                text='App clone'
-                            ),
-                            MessageTemplateAction(
-                                label='Screen Recorder',
-                                text='Screen Recorder'
-                            ),
-                            MessageTemplateAction(
-                                label='Emulator Android PC',
-                                text='Emulator Android PC'
-                            )
-                        ]
+                    MessageTemplateAction(
+                        label='Hiburan',
+                        text='Hiburan'
                     )
                 ]
             )
         )
-        line_bot_api.reply_message(event.reply_token, carousel_template_message)
+        line_bot_api.reply_message(event.reply_token, buttons_template)
+        return 0
+    if event.message.text == "ORI grup":
+        buttons_template = TemplateSendMessage(
+            alt_text='About ORI',
+            template=ButtonsTemplate(
+                title='About ORI',
+                text='Pilih salah satu menu dibawah ini',
+                thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
+                actions=[
+                    MessageTemplateAction(
+                        label='Pengurus',
+                        text='Pengurus'
+                    ),
+                    MessageTemplateAction(
+                        label='Rules',
+                        text='Rules'
+                    ),
+                    MessageTemplateAction(
+                        label='Guild',
+                        text='Guild'
+                    )
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token, buttons_template)
+        return 0
+    if event.message.text == "Hiburan":
+        buttons_template = TemplateSendMessage(
+            alt_text='About ORI',
+            template=ButtonsTemplate(
+                title='About ORI',
+                text='Pilih salah satu menu dibawah ini',
+                thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
+                actions=[
+                    MessageTempalateAction(
+                        label='Kerang ajaib',
+                        text='Kerajib'
+                    ),
+                    MessageTemplateAction(
+                        label='Penjwb pertanyaan',
+                        text='Questans'
+                    ),
+                    MessageTemplateAction(
+                        label='Foto makanan (Acak)',
+                        text='Makanan'
+                    )
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
     if event.message.text == "Rules":
         buttons_template = TemplateSendMessage(
