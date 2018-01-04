@@ -55,41 +55,8 @@ def handle_message(event):
         text_message = TextSendMessage(text=jwbn)
         line_bot_api.reply_message(event.reply_token, text_message)
         return 0
-    elif "Apakah " in event.message.text:
-        quo = ('Iya','Tidak','Gak tau')
-        jwb = random.choice(quo)
-        text_message = TextSendMessage(text=jwb)
-        line_bot_api.reply_message(event.reply_token, text_message)
-        return 0
-    elif "Siapakah " in event.message.text:
-        jawan = ('Orang yang suka gosip kak...','Orang yang suka ngalong kak...','dia jones lho, temenin gih...','Orang yang baik dan tidak sombong kak...','Orang yang suka baperan kak...','Dia sultan lho...','Dia yang kemarin nabrak tiang listrik...')
-        dsa = random.choice(jawan)
-        text_message = TextSendMessage(text=dsa)
-        line_bot_api.reply_message(event.reply_token, text_message)
-        return 0
-    if event.message.text == "Makanan":
-        quor = ('https://imgur.com/Gl0lcYB.jpg','https://imgur.com/1Sae11M.jpg','https://imgur.com/ZuChLoV.jpg','https://imgur.com/miHQFHT.jpg','https://imgur.com/lhR1aW3.jpg','https://imgur.com/qf6gwYQ.jpg','https://imgur.com/3nbHyTw.jpg','https://imgur.com/wq83igW.jpg')
-        jwbr = random.choice(quor)
-        image_message = ImageSendMessage(
-            original_content_url=jwbr,
-            preview_image_url=jwbr
-        )
-        line_bot_api.reply_message(event.reply_token, image_message)
-        return 0
     elif "/lr" in event.message.text:
         text_message = TextSendMessage(text='Gak ada po disini\nLewat personal chat aja ya...\nNih kontaknya\nhttp://line.me/R/ti/p/~@qik6373h\nhttp://line.me/R/ti/p/~@qik6373h')
-        line_bot_api.reply_message(event.reply_token, text_message)
-        return 0
-    elif "Kapan " in event.message.text:
-        quo = ('Hari ini','Besok','Lusa','Minggu depan','Sebulan lagi','Setahun lagi','Tanya langsung ke orangnya...')
-        jwb = random.choice(quo)
-        text_message = TextSendMessage(text=jwb)
-        line_bot_api.reply_message(event.reply_token, text_message)
-        return 0
-    elif "Idl " in event.message.text:
-        skss = event.message.text.replace('Idl ', '')
-        sasa = "http://line.me/R/ti/p/~" + skss
-        text_message = TextSendMessage(text=sasa)
         line_bot_api.reply_message(event.reply_token, text_message)
         return 0
     if event.message.text == "Key":
