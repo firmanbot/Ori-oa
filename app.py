@@ -59,14 +59,6 @@ def handle_message(event):
         text_message = TextSendMessage(text='Gak ada po disini\nLewat personal chat aja ya...\nNih kontaknya\nhttp://line.me/R/ti/p/~@qik6373h\nhttp://line.me/R/ti/p/~@qik6373h')
         line_bot_api.reply_message(event.reply_token, text_message)
         return 0
-    elif "test" in event.message.text:
-        r = requests.get("https://farzain.xyz/api/shalat.php?apikey=Gpp0HeOeVHYGlnDJpnZd6hKsTcakJI&id=jakarta")
-        respon=r.text
-        respon=json.loads(data)
-        a = str(respon['shubuh'])
-        text_message = TextSendMessage(text=a)
-        line_bot_api.reply_message(event.reply_token, text_message)
-        return 0
     if event.message.text == "Key":
         buttons_template = TemplateSendMessage(
             alt_text='Key ØRI',
