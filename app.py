@@ -60,8 +60,12 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, text_message)
         return 0
     if event.message.text == "Hadiah":
-        lk = ['micin','steak','burger']
-        kk = random.choice(lk)
+        lk1 = ['micin','steak','burger','yah dapet zonk']
+        kk1 = random.choice(lk)
+        lk2 = ['micin','steak','burger','mr bean']
+        kk2 = random.choice(lk)
+        lk3 = ['micin','steak','burger']
+        kk3 = random.choice(lk)
         buttons_template = TemplateSendMessage(
             alt_text='Hadiah Kejutan',
             template=ButtonsTemplate(
@@ -71,15 +75,15 @@ def handle_message(event):
                 actions=[
                     MessageTemplateAction(
                         label='1',
-                        text=kk
+                        text=kk1
                     ),
                     MessageTemplateAction(
                         label='2',
-                        text=kk
+                        text=kk2
                     ),
                     MessageTemplateAction(
                         label='3',
-                        text=kk
+                        text=kk3
                     )
                 ]
             )
