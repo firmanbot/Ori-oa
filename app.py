@@ -71,15 +71,15 @@ def handle_message(event):
                 actions=[
                     MessageTemplateAction(
                         label='1',
-                        text=lk
+                        text=kk
                     ),
                     MessageTemplateAction(
                         label='2',
-                        text=lk
+                        text=kk
                     ),
                     MessageTemplateAction(
                         label='3',
-                        text=lk
+                        text=kk
                     )
                 ]
             )
