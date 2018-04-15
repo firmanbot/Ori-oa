@@ -59,6 +59,33 @@ def handle_message(event):
         text_message = TextSendMessage(text='Gak ada po disini\nLewat personal chat aja ya...\nNih kontaknya\nhttp://line.me/R/ti/p/~@qik6373h\nhttp://line.me/R/ti/p/~@qik6373h')
         line_bot_api.reply_message(event.reply_token, text_message)
         return 0
+    if event.message.text == "Hadiah":
+        lk = ['micin','steak','burger']
+        kk = random.choice(lk)
+        buttons_template = TemplateSendMessage(
+            alt_text='Hadiah Kejutan',
+            template=ButtonsTemplate(
+                title='Hadiah Kejutan',
+                text='Pilih salah satu menu dibawah ini',
+                thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
+                actions=[
+                    MessageTemplateAction(
+                        label='1',
+                        text=lk
+                    ),
+                    MessageTemplateAction(
+                        label='2',
+                        text=lk
+                    ),
+                    MessageTemplateAction(
+                        label='3',
+                        text=lk
+                    )
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token, buttons_template)
+        return 0
     if event.message.text == "About bot":
         buttons_template = TemplateSendMessage(
             alt_text='About ORI Bot',
