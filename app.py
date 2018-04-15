@@ -59,6 +59,31 @@ def handle_message(event):
         text_message = TextSendMessage(text='Gak ada po disini\nLewat personal chat aja ya...\nNih kontaknya\nhttp://line.me/R/ti/p/~@qik6373h\nhttp://line.me/R/ti/p/~@qik6373h')
         line_bot_api.reply_message(event.reply_token, text_message)
         return 0
+    if event.message.text == "About bot":
+        buttons_template = TemplateSendMessage(
+            alt_text='About ORI Bot',
+            template=ButtonsTemplate(
+                title='About ORI Bot',
+                text='Pilih salah satu menu dibawah ini',
+                thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
+                actions=[
+                    MessageTemplateAction(
+                        label='Developer',
+                        text='Bot developer'
+                    ),
+                    MessageTemplateAction(
+                        label='Version',
+                        text='Version'
+                    ),
+                    MessageTemplateAction(
+                        label='Info ORI Bot',
+                        text='Info bot'
+                    )
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token, buttons_template)
+        return 0
     if event.message.text == "Key":
         buttons_template = TemplateSendMessage(
             alt_text='Key ØRI',
@@ -68,16 +93,16 @@ def handle_message(event):
                 thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
                 actions=[
                     MessageTemplateAction(
-                        label='ORI Key',
+                        label='About ORI',
                         text='ORI grup'
-                    ),
-                    MessageTemplateAction(
-                        label='ORI Bot Developer',
-                        text='Bot Developer'
                     ),
                     MessageTemplateAction(
                         label='More Keyword',
                         text='Help'
+                    ),
+                    MessageTemplateAction(
+                        label='About ORI Bot',
+                        text='About bot'
                     )
                 ]
             )
@@ -134,7 +159,7 @@ def handle_message(event):
         buttons_template = TemplateSendMessage(
             alt_text='Isi data diri',
             template=ButtonsTemplate(
-                title='isi data dinote grup.diberi wkt 1x24 jam',
+                title='isi formnya ya. diberi wkt 1x24 jam',
                 text='lewat dari wkt yg di tentukan akan di kick',
                 thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
                 actions=[
@@ -145,6 +170,10 @@ def handle_message(event):
                     MessageTemplateAction(
                         label='Baca juga rulesnya',
                         text='Rules'
+                    ),
+                    MessageTemplateAction(
+                        label='Keyword ORI',
+                        text='Key'
                     )
                 ]
             )
