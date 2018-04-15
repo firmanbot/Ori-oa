@@ -65,15 +65,19 @@ def handle_message(event):
             template=ButtonsTemplate(
                 title='Key ØRI',
                 text='Pilih salah satu menu dibawah ini',
-                thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
+                thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
                 actions=[
                     MessageTemplateAction(
                         label='About ORI',
                         text='ORI grup'
                     ),
                     MessageTemplateAction(
-                        label='Hiburan',
-                        text='Hiburan'
+                        label='ORI Bot Developer',
+                        text='Bot Developer'
+                    ),
+                    MessageTemplateAction(
+                        label='More Keyword',
+                        text='Help'
                     )
                 ]
             )
@@ -86,7 +90,7 @@ def handle_message(event):
             template=ButtonsTemplate(
                 title='About ORI',
                 text='Pilih salah satu menu dibawah ini',
-                thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
+                thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
                 actions=[
                     MessageTemplateAction(
                         label='Pengurus',
@@ -105,45 +109,20 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
-    if event.message.text == "Hiburan":
-        buttons_template = TemplateSendMessage(
-            alt_text='Hiburan',
-            template=ButtonsTemplate(
-                title='Hiburan',
-                text='Pilih salah satu menu dibawah ini',
-                thumbnail_image_url='https://imgur.com/RBDkN79.jpg',
-                actions=[
-                    MessageTemplateAction(
-                        label='Kerang ajaib',
-                        text='Kerajib'
-                    ),
-                    MessageTemplateAction(
-                        label='Penjwb Pertanyaan',
-                        text='Rules satuan'
-                    ),
-                    MessageTemplateAction(
-                        label='Foto makanan',
-                        text='Makanan'
-                    )
-                ]
-            )
-        )
-        line_bot_api.reply_message(event.reply_token, buttons_template)
-        return 0
     if event.message.text == "Rules":
         buttons_template = TemplateSendMessage(
             alt_text='Rules ØRI',
             template=ButtonsTemplate(
                 title='Rules ØRI',
                 text='Dalam versi apa?',
-                thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
+                thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
                 actions=[
                     MessageTemplateAction(
-                        label='Versi satuan',
-                        text='Rules satuan'
+                        label='Teks',
+                        text='Rules full'
                     ),
                     URITemplateAction(
-                        label='Versi full',
+                        label='Gambar',
                         uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1151442807704026737'
                     )
                 ]
@@ -174,7 +153,7 @@ def handle_message(event):
             template=ButtonsTemplate(
                 title='Guild ØRI',
                 text='Gak punya guild? join aja...',
-                thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
+                thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
                 actions=[
                     URITemplateAction(
                         label='Info',
@@ -191,7 +170,7 @@ def handle_message(event):
             template=ButtonsTemplate(
                 title='isi data dinote grup.diberi wkt 1x24 jam',
                 text='lewat dari wkt yg di tentukan akan di kick',
-                thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
+                thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
                 actions=[
                     MessageTemplateAction(
                         label='Dapatkan form',
