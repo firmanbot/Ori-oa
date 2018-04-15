@@ -61,11 +61,11 @@ def handle_message(event):
         return 0
     if event.message.text == "Hadiah":
         lk1 = ['micin','steak','burger','yah dapet zonk']
-        kk1 = random.choice(lk)
+        kk1 = random.choice(lk1)
         lk2 = ['micin','steak','burger','mr bean']
-        kk2 = random.choice(lk)
+        kk2 = random.choice(lk2)
         lk3 = ['micin','steak','burger']
-        kk3 = random.choice(lk)
+        kk3 = random.choice(lk3)
         buttons_template = TemplateSendMessage(
             alt_text='Hadiah Kejutan',
             template=ButtonsTemplate(
