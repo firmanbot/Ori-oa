@@ -3,7 +3,7 @@ import re
 import random
 import configparser
 from bs4 import BeautifulSoup
-from flask import Flask, request, abort, json
+from flask import Flask, request, abort
 from imgurpython import ImgurClient
 
 from linebot import (
@@ -68,7 +68,7 @@ def handle_message(event):
                 thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
                 actions=[
                     MessageTemplateAction(
-                        label='About ORI',
+                        label='ORI Key',
                         text='ORI grup'
                     ),
                     MessageTemplateAction(
@@ -92,17 +92,17 @@ def handle_message(event):
                 text='Pilih salah satu menu dibawah ini',
                 thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
                 actions=[
-                    MessageTemplateAction(
+                    URITemplateAction(
                         label='Pengurus',
-                        text='Pengurus'
+                        uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1151442178104024988'
                     ),
                     MessageTemplateAction(
                         label='Rules',
                         text='Rules'
                     ),
-                    MessageTemplateAction(
+                    URITemplateAction(
                         label='Guild',
-                        text='Guild'
+                        uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1151441933104021159'
                     )
                 ]
             )
@@ -130,40 +130,6 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
-    if event.message.text == "Pengurus":
-        buttons_template = TemplateSendMessage(
-            alt_text='Pengurus ØRI',
-            template=ButtonsTemplate(
-                title='Pengurus ØRI',
-                text='Pengen tau? klik menu dibawah ini',
-                thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
-                actions=[
-                    URITemplateAction(
-                        label='Info',
-                        uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1151442178104024988'
-                    )
-                ]
-            )
-        )
-        line_bot_api.reply_message(event.reply_token, buttons_template)
-        return 0
-    if event.message.text == "Guild":
-        buttons_template = TemplateSendMessage(
-            alt_text='Guild ØRI',
-            template=ButtonsTemplate(
-                title='Guild ØRI',
-                text='Gak punya guild? join aja...',
-                thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
-                actions=[
-                    URITemplateAction(
-                        label='Info',
-                        uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1151441933104021159'
-                    )
-                ]
-            )
-        )
-        line_bot_api.reply_message(event.reply_token, buttons_template)
-        return 0
     if event.message.text == "Welcome":
         buttons_template = TemplateSendMessage(
             alt_text='Isi data diri',
@@ -176,9 +142,9 @@ def handle_message(event):
                         label='Dapatkan form',
                         text='Minta form dong min...'
                     ),
-                    URITemplateAction(
-                        label='Dibaca juga Rulesnya',
-                        uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1151442807704026737'
+                    MessageTemplateAction(
+                        label='Baca juga rulesnya',
+                        text='Rules'
                     )
                 ]
             )
