@@ -59,31 +59,23 @@ def handle_message(event):
         text_message = TextSendMessage(text='Gak ada po disini\nLewat personal chat aja ya...\nNih kontaknya\nhttp://line.me/R/ti/p/~@qik6373h\nhttp://line.me/R/ti/p/~@qik6373h')
         line_bot_api.reply_message(event.reply_token, text_message)
         return 0
+    elif event.message.text in ['obat nyamuk','very istimewa','yah dapet zonk','duit mini']:
+        text_message = TextSendMessage(text='Ayo coba lagi kak. ketik Hadiah')
+        line_bot_api.reply_message(event.reply_token, text_message)
+        return 0
     if event.message.text == "Hadiah":
-        lk1 = ['micin','steak','burger','yah dapet zonk']
+        lk1 = ['obat nyamuk','istimewa','yah dapet zonk','duit mini']
         kk1 = random.choice(lk1)
-        lk2 = ['micin','steak','burger','mr bean']
-        kk2 = random.choice(lk2)
-        lk3 = ['micin','steak','burger']
-        kk3 = random.choice(lk3)
         buttons_template = TemplateSendMessage(
             alt_text='Hadiah Kejutan',
             template=ButtonsTemplate(
                 title='Hadiah Kejutan',
-                text='Pilih salah satu menu dibawah ini',
+                text='Ayo buka kejutanmu!!!',
                 thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
                 actions=[
                     MessageTemplateAction(
-                        label='1',
+                        label='Buka Sekarang!!',
                         text=kk1
-                    ),
-                    MessageTemplateAction(
-                        label='2',
-                        text=kk2
-                    ),
-                    MessageTemplateAction(
-                        label='3',
-                        text=kk3
                     )
                 ]
             )
