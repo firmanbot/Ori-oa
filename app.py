@@ -151,6 +151,10 @@ def handle_message(event):
                     URITemplateAction(
                         label='Guild',
                         uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1151441933104021159'
+                    ),
+                    URITemplateAction(
+                        label='Filosofi',
+                        uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1152422979304029812'
                     )
                 ]
             )
