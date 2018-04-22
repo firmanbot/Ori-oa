@@ -82,27 +82,27 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
-    if event.message.text == "Test":    
+    if event.message.text == "Kontak Pgrs":    
         carousel_template_message = TemplateSendMessage(
-            alt_text='Test',
+            alt_text='Kontak Pengurus',
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
                         thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
-                        title='Tst',
-                        text='test22',
+                        title='Kontak Pengurus',
+                        text='Pilih salah satu',
                         actions=[
                             MessageTemplateAction(
-                                label='Rlx',
-                                text='Rcc'
+                                label='Leader',
+                                text='Leader ori'
                             ),
                             MessageTemplateAction(
-                                label='Rules',
-                                text='Rules'
+                                label='Colead',
+                                text='Colead ori'
                             ),
                             MessageTemplateAction(
-                                label='Version',
-                                text='Version'
+                                label='Admin',
+                                text='Admin ori'
                             )
                         ]
                     ),
@@ -112,16 +112,16 @@ def handle_message(event):
                         text='test22',
                         actions=[
                             MessageTemplateAction(
-                                label='Rlx',
-                                text='Rcc'
+                                label='Penasehat',
+                                text='Penasehat ori'
                             ),
                             MessageTemplateAction(
-                                label='Rules',
-                                text='Rules'
+                                label='Staff',
+                                text='Staff ori'
                             ),
                             MessageTemplateAction(
-                                label='Version',
-                                text='Version'
+                                label='Bot Creator',
+                                text='Bot Developer'
                             )
                         ]
                     )
@@ -188,9 +188,9 @@ def handle_message(event):
                 text='Pilih salah satu menu dibawah ini',
                 thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
                 actions=[
-                    URITemplateAction(
+                    MessageTemplateAction(
                         label='Pengurus',
-                        uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1151442178104024988'
+                        text='Pengurus'
                     ),
                     MessageTemplateAction(
                         label='Rules',
@@ -203,6 +203,27 @@ def handle_message(event):
                     URITemplateAction(
                         label='Filosofi',
                         uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1152422979304029812'
+                    )
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token, buttons_template)
+        return 0
+    if event.message.text == "Pengurus":
+        buttons_template = TemplateSendMessage(
+            alt_text='Pengurus ØRI',
+            template=ButtonsTemplate(
+                title='Pengurus ØRI',
+                text='Mau lihat pengurus lewat apa?',
+                thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
+                actions=[
+                    MessageTemplateAction(
+                        label='Kontak',
+                        text='Kontak Pgrs'
+                    ),
+                    URITemplateAction(
+                        label='Gambar',
+                        uri='http://line.me/R/home/public/post?id=wnq1836k&postId=1151442178104024988'
                     )
                 ]
             )
