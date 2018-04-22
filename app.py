@@ -82,6 +82,54 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
+    if event.message.text == "Keyword":    
+        carousel_template_message = TemplateSendMessage(
+            alt_text='Keyword ØRI',
+            template=CarouselTemplate(
+                columns=[
+                    CarouselColumn(
+                        thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
+                        title='ØRI Keyword',
+                        text='',
+                        actions=[
+                            MessageTemplateAction(
+                                label='Pengurus',
+                                text='Pengurus'
+                            ),
+                            MessageTemplateAction(
+                                label='Guild',
+                                text='Guild'
+                            ),
+                            MessageTemplateAction(
+                                label='Rules',
+                                text='Rules'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://imgur.com/RBDkN79',
+                        title='Hiburan',
+                        text='Klik salah satu menu dibawah ini',
+                        actions=[
+                            MessageTempalateAction(
+                                label='Kerang ajaib',
+                                text='Kerajib'
+                            ),
+                            MessageTemplateAction(
+                                label='Penjwb pertanyaan',
+                                text='Questans'
+                            ),
+                            MessageTemplateAction(
+                                label='Foto makanan (Acak)',
+                                text='Makanan'
+                            )
+                        ]
+                    )
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token, carousel_template_message)
+        return 0
     if event.message.text == "About bot":
         buttons_template = TemplateSendMessage(
             alt_text='About ORI Bot',
