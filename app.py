@@ -95,6 +95,10 @@ def handle_message(event):
                             MessageTemplateAction(
                                 label='Rules',
                                 text='Rules'
+                            ),
+                            MessageTemplateAction(
+                                label='Version',
+                                text='Version'
                             )
                         ]
                     ),
@@ -106,6 +110,10 @@ def handle_message(event):
                             MessageTemplateAction(
                                 label='Rules',
                                 text='Rules'
+                            ),
+                            MessageTemplateAction(
+                                label='Version',
+                                text='Version'
                             )
                         ]
                     )
