@@ -90,7 +90,7 @@ def handle_message(event):
                     CarouselColumn(
                         thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
                         title='ØRI Keyword',
-                        text='',
+                        text='test22',
                         actions=[
                             MessageTemplateAction(
                                 label='Pengurus',
