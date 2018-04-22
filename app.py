@@ -107,7 +107,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://imgur.com/RBDkN79',
+                        thumbnail_image_url='https://imgur.com/RBDkN79.jpg',
                         title='Hiburan',
                         text='Klik salah satu menu dibawah ini',
                         actions=[
