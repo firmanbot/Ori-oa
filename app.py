@@ -82,24 +82,16 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
-    if event.message.text == "Keyword":    
+    if event.message.text == "Test":    
         carousel_template_message = TemplateSendMessage(
-            alt_text='Keyword ØRI',
+            alt_text='Test',
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
                         thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
-                        title='ØRI Keyword',
+                        title='Tst',
                         text='test22',
                         actions=[
-                            MessageTemplateAction(
-                                label='Pengurus',
-                                text='Pengurus'
-                            ),
-                            MessageTemplateAction(
-                                label='Guild',
-                                text='Guild'
-                            ),
                             MessageTemplateAction(
                                 label='Rules',
                                 text='Rules'
@@ -112,35 +104,8 @@ def handle_message(event):
                         text='test22',
                         actions=[
                             MessageTemplateAction(
-                                label='Pengurus',
-                                text='Pengurus'
-                            ),
-                            MessageTemplateAction(
-                                label='Guild',
-                                text='Guild'
-                            ),
-                            MessageTemplateAction(
                                 label='Rules',
                                 text='Rules'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
-                        title='Hiburan',
-                        text='Klik salah satu menu dibawah ini',
-                        actions=[
-                            MessageTempalateAction(
-                                label='Kerang ajaib',
-                                text='Kerajib'
-                            ),
-                            MessageTemplateAction(
-                                label='Penjwb',
-                                text='Questans'
-                            ),
-                            MessageTemplateAction(
-                                label='Foto',
-                                text='Makanan'
                             )
                         ]
                     )
