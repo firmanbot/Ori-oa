@@ -108,6 +108,25 @@ def handle_message(event):
                     ),
                     CarouselColumn(
                         thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
+                        title='ØRI Keyword',
+                        text='test22',
+                        actions=[
+                            MessageTemplateAction(
+                                label='Pengurus',
+                                text='Pengurus'
+                            ),
+                            MessageTemplateAction(
+                                label='Guild',
+                                text='Guild'
+                            ),
+                            MessageTemplateAction(
+                                label='Rules',
+                                text='Rules'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
                         title='Hiburan',
                         text='Klik salah satu menu dibawah ini',
                         actions=[
