@@ -108,8 +108,8 @@ def handle_message(event):
                     ),
                     CarouselColumn(
                         thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
-                        title='ØRI Keyword',
-                        text='test22',
+                        title='Kontak Pengurus',
+                        text='Pilih salah satu',
                         actions=[
                             MessageTemplateAction(
                                 label='Penasehat',
@@ -120,8 +120,8 @@ def handle_message(event):
                                 text='Staff ori'
                             ),
                             MessageTemplateAction(
-                                label='Bot Creator',
-                                text='Bot Developer'
+                                label='Emak',
+                                text='Emak ori'
                             )
                         ]
                     )
