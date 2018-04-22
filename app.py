@@ -88,7 +88,7 @@ def handle_message(event):
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://imgur.com/8wsvtGU.jpg',
+                        thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
                         title='ØRI Keyword',
                         text='',
                         actions=[
@@ -107,7 +107,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://imgur.com/RBDkN79.jpg',
+                        thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
                         title='Hiburan',
                         text='Klik salah satu menu dibawah ini',
                         actions=[
@@ -116,11 +116,11 @@ def handle_message(event):
                                 text='Kerajib'
                             ),
                             MessageTemplateAction(
-                                label='Penjwb pertanyaan',
+                                label='Penjwb',
                                 text='Questans'
                             ),
                             MessageTemplateAction(
-                                label='Foto makanan (Acak)',
+                                label='Foto',
                                 text='Makanan'
                             )
                         ]
