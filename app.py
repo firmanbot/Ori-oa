@@ -93,6 +93,10 @@ def handle_message(event):
                         text='test22',
                         actions=[
                             MessageTemplateAction(
+                                label='Rlx',
+                                text='Rcc'
+                            ),
+                            MessageTemplateAction(
                                 label='Rules',
                                 text='Rules'
                             ),
@@ -107,6 +111,10 @@ def handle_message(event):
                         title='ØRI Keyword',
                         text='test22',
                         actions=[
+                            MessageTemplateAction(
+                                label='Rlx',
+                                text='Rcc'
+                            ),
                             MessageTemplateAction(
                                 label='Rules',
                                 text='Rules'
