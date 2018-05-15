@@ -88,7 +88,7 @@ def handle_message(event):
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
+                        thumbnail_image_url='https://imgur.com/cUO27Yd.jpg',
                         title='Kontak Pengurus',
                         text='Pilih salah satu',
                         actions=[
@@ -107,7 +107,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
+                        thumbnail_image_url='https://imgur.com/23TcxK5.jpg',
                         title='Kontak Pengurus',
                         text='Pilih salah satu',
                         actions=[
@@ -136,7 +136,7 @@ def handle_message(event):
             template=ButtonsTemplate(
                 title='About ORI Bot',
                 text='Pilih salah satu menu dibawah ini',
-                thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
+                thumbnail_image_url='https://imgur.com/qNOi0Qu.jpg',
                 actions=[
                     MessageTemplateAction(
                         label='Developer',
@@ -186,7 +186,7 @@ def handle_message(event):
             template=ButtonsTemplate(
                 title='About ORI',
                 text='Pilih salah satu menu dibawah ini',
-                thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
+                thumbnail_image_url='https://imgur.com/vNZlfOA.jpg',
                 actions=[
                     MessageTemplateAction(
                         label='Pengurus',
@@ -215,7 +215,7 @@ def handle_message(event):
             template=ButtonsTemplate(
                 title='Pengurus ØRI',
                 text='Mau lihat pengurus lewat apa?',
-                thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
+                thumbnail_image_url='https://imgur.com/ea72IkU.jpg',
                 actions=[
                     MessageTemplateAction(
                         label='Kontak',
@@ -236,7 +236,7 @@ def handle_message(event):
             template=ButtonsTemplate(
                 title='Rules ØRI',
                 text='Dalam versi apa?',
-                thumbnail_image_url='https://imgur.com/CVpvIdt.jpg',
+                thumbnail_image_url='https://imgur.com/8udTsks.jpg',
                 actions=[
                     MessageTemplateAction(
                         label='Teks',
@@ -251,7 +251,7 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
-    if event.message.text == "Welcome":
+    if event.message.text == "Wexm":
         buttons_template = TemplateSendMessage(
             alt_text='Isi data diri',
             template=ButtonsTemplate(
